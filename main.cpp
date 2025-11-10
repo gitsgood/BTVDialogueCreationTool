@@ -248,7 +248,7 @@ namespace JsonString
 int main() 
 {
     // Define the path to start searching from (e.g., the current directory) 
-    fs::path searchPath = "C:/Users/Chris/Documents";
+    fs::path searchPath = "C:/Users/vladi/Documents/GitHub";
 
     // The string to look for in directory names 
     std::string searchString = "DialogueJSONs";
@@ -258,6 +258,12 @@ int main()
 
     std::cout << "Searching for directories containing '" << searchString << "' in '" << fs::absolute(searchPath) << "'..." << std::endl;
     findDirectoryByName(searchPath, searchString, destinationPath);
+
+    if (destinationPath.empty())
+    {
+        std::cout << "\nI (the program) could not find the destination directory for the dialogue JSON,\nplease make sure you installed a recent branch of the Burn The Village project...\n";
+        return -1;
+    }
 
     std::cout << "Will now work on the following directory: " << destinationPath << std::endl;
 
