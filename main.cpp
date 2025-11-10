@@ -181,7 +181,7 @@ namespace JsonString
             NodeId += "\"";
         }
 
-        std::cout << "\nHow many things can the player say in response to: \n" << NodeDialogue;
+        std::cout << "\nHow many things can the player say in response to: \n" << NodeDialogue << "\n\n";
         inputSafetyCheckStringToInt(EdgeAmountForThisNode);
         
 
@@ -199,7 +199,7 @@ namespace JsonString
             else JsonObjectForThisNode += "\"]";
 
             std::cout << "When the NPC says: << " << NodeDialogue << " >>\n";
-            std::cout << "\tPlayer option: " << i << " out of " << EdgeAmountForThisNode << "will now be generated...\n";
+            std::cout << "\tPlayer option: " << i+1 << " out of " << EdgeAmountForThisNode << " will now be generated...\n";
             edgeGeneration(EdgeIdName, NodeDialogue);
         }
         JsonObjectForThisNode += "\n\t\t}";
@@ -265,7 +265,7 @@ int main()
         return -1;
     }
 
-    std::cout << "Will now work on the following directory: " << destinationPath << std::endl;
+    std::cout << "\nWill now work on the following directory: " << destinationPath << std::endl;
 
     std::cout << "\nWhat would you like to name your dialogue JSON file?\n";
 
